@@ -55,7 +55,7 @@ menu = {
 order_list = []
 
 # Launch the store and present a greeting to the customer
-print("Welcome to the variety food truck.")
+print("\nWelcome to OSU Bootcamp food truck.")
 
 # Customers may want to order multiple items, so let's create a continuous
 # loop
@@ -63,7 +63,7 @@ place_order = True
 while place_order:
     # Ask the customer from which menu category they want to order
     print("~" * 50)
-    print("From which menu would you like to order? ")
+    print("From which menu would you like to order?\n")
 
     # Create a variable for the menu item number
     i = 1
@@ -159,7 +159,6 @@ while place_order:
         # Tell the customer they didn't select a number
         print("ERROR: You didn't select a number.")
 
-    order_complete = False
     while True:
         # Ask the customer if they would like to order anything else
         keep_ordering = input("\n Would you like to keep ordering? (Y)es or (N)o ")
@@ -175,15 +174,12 @@ while place_order:
                     # Since the customer decided to stop ordering, thank them for
                     # their order
                     # Exit the keep ordering question loop
-                    order_complete = True
+                    place_order = False
                     print(f"\n****Thank you for your order.****")
                     break
                 case _:
                     # Tell the customer to try again
-                    print(f"ERROR: Invalid selection. Type Y or N to continue.")
-                    
-    if order_complete:
-        place_order = False
+                    print(f"ERROR: Invalid selection. Type Y or N to continue.")        
 
 if place_order == False:
     # Print out the customer's order
